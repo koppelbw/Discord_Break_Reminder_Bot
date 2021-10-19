@@ -20,7 +20,7 @@ client.once('ready', () =>
 
     client.on('presenceUpdate', (oldPresence, newPresence) => 
     {
-        var isThisDoorTK = oldPresence.userId === DOORTK_ID && newPresence.userId === DOORTK_ID;
+        var isThisDoorTK = oldPresence !== null && oldPresence.userId === DOORTK_ID && newPresence.userId === DOORTK_ID;
 
         if(isThisDoorTK)
         {
@@ -71,7 +71,7 @@ function messageHandler()
         var currentTime = new Date().getTime();
         var minutesPlayed = (currentTime - startTime.getTime()) / 1000 / 60;
         
-        console.log("minutes Played: " + minutesPlayed + "|||" + (minutesBetweenBreaks * hoursPlayed));    
+        // console.log("minutes Played: " + minutesPlayed + "|||" + (minutesBetweenBreaks * hoursPlayed));    
         if(minutesPlayed >= (minutesBetweenBreaks * hoursPlayed))
         {
             messageUser(hoursPlayed++);
@@ -91,5 +91,5 @@ function messageUser(hoursPlayed)
 
 //////////////////////////////////////////////////////////////////
 // must be last line in file
-client.login('ODk3MjYxNzIzOTMxODAzNjY5.YWTGGQ.Nz-n_2l1lyglIO5I-nPavuSzeBk');
+client.login('ODk3MjYxNzIzOTMxODAzNjY5.YWTGGQ.L6cJe7RmyTvyQLbfbj4vXV9SOm8');
 //////////////////////////////////////////////////////////////////
