@@ -81,6 +81,8 @@ function messageHandler()
 
 function messageUser(hoursPlayed)
 {
+    client.users.cache.get(DOORTK_ID).send("Ping 1");
+    client.users.cache.get(DOORTK_ID).send("Ping 2");
     client.users.cache.get(DOORTK_ID).send(
             "Time to take a quick break!\nYou have been playing for "
             + hoursPlayed
@@ -91,5 +93,5 @@ function messageUser(hoursPlayed)
 
 //////////////////////////////////////////////////////////////////
 // must be last line in file
-client.login('ODk3MjYxNzIzOTMxODAzNjY5.YWTGGQ.L6cJe7RmyTvyQLbfbj4vXV9SOm8');
+client.login('');
 //////////////////////////////////////////////////////////////////
